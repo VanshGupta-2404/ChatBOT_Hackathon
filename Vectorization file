@@ -3,12 +3,12 @@ from langchain_community.document_loaders import TextLoader,UnstructuredFileLoad
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 
-Data_path = "C:\\Users\\VANSH GUPTA\\OneDrive\\Desktop\\translated_data.json"
+Data_path = ""
 DB_Faiss_Path = "vectorstores/db_faiss"
 
 #create cector database
 def create_vector_db():
-    loader = TextLoader("C:\\Users\\VANSH GUPTA\\OneDrive\\Desktop\\translated_data.json")
+    loader = TextLoader("")
     document = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap = 50)
     texts = text_splitter.split_documents(document)
